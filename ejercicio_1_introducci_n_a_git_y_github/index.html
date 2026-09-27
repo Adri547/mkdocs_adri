@@ -1,0 +1,944 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../ejercicio_2_introducci_n_a_markdown/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Ejercicio 1: Git y GitHub - Web de Adrià Ferrando</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicio-1-introduccion-a-git-y-github" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Web de Adrià Ferrando" class="md-header__button md-logo" aria-label="Web de Adrià Ferrando" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web de Adrià Ferrando
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ejercicio 1: Git y GitHub
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Web de Adrià Ferrando" class="md-nav__button md-logo" aria-label="Web de Adrià Ferrando" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Web de Adrià Ferrando
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actividades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicio 1: Git y GitHub
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicio 1: Git y GitHub
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-generar-un-token-de-acceso-personal-pat-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Generar un Token de Acceso Personal (PAT) en GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creacion-de-un-repositorio-en-github-prova_adri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Creación de un Repositorio en GitHub (prova_adri)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-instalacion-y-configuracion-de-git-en-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Instalación y Configuración de Git en Ubuntu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clonar-el-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clonar el Repositorio Remoto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-trabajo-con-archivos-anadir-subir-y-modificar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Trabajo con Archivos: Añadir, Subir y Modificar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Trabajo con Archivos: Añadir, Subir y Modificar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-crear-y-subir-un-nuevo-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Crear y Subir un Nuevo Archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-modificar-un-archivo-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Modificar un Archivo Existente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-renombrar-y-borrar-archivos-en-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Renombrar y Borrar Archivos en Git
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Renombrar y Borrar Archivos en Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-renombrar-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Renombrar un Archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-eliminar-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Eliminar un Archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-crear-un-repositorio-local-e-impulsarlo-a-github-prova2_adri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Crear un Repositorio Local e Impulsarlo a GitHub (prova2_adri)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ejercicio_2_introducci_n_a_markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ejercicio 2: Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr_ctica_1_git_ramas_y_uniones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 1: Ramas y Uniones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr_ctica_2_pull_request/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 2: Pull Request
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr_ctica_3_mkdocs_github_pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Práctica 3: MkDocs y GitHub Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-generar-un-token-de-acceso-personal-pat-en-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Generar un Token de Acceso Personal (PAT) en GitHub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-creacion-de-un-repositorio-en-github-prova_adri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Creación de un Repositorio en GitHub (prova_adri)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-instalacion-y-configuracion-de-git-en-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Instalación y Configuración de Git en Ubuntu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clonar-el-repositorio-remoto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clonar el Repositorio Remoto
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-trabajo-con-archivos-anadir-subir-y-modificar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Trabajo con Archivos: Añadir, Subir y Modificar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Trabajo con Archivos: Añadir, Subir y Modificar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-crear-y-subir-un-nuevo-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Crear y Subir un Nuevo Archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-modificar-un-archivo-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Modificar un Archivo Existente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-renombrar-y-borrar-archivos-en-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Renombrar y Borrar Archivos en Git
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Renombrar y Borrar Archivos en Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-renombrar-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Renombrar un Archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-eliminar-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Eliminar un Archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-crear-un-repositorio-local-e-impulsarlo-a-github-prova2_adri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Crear un Repositorio Local e Impulsarlo a GitHub (prova2_adri)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ejercicio-1-introduccion-a-git-y-github">Ejercicio 1: Introducción a Git y GitHub</h1>
+<p><strong>Nombre del alumno:</strong> Adrià Ferrando Bertomeu<br />
+<strong>Asignatura:</strong> Implantación de Aplicaciones Web (IAW)</p>
+<hr />
+<h2 id="1-generar-un-token-de-acceso-personal-pat-en-github">1. Generar un Token de Acceso Personal (PAT) en GitHub</h2>
+<p>Como primera medida de seguridad en GitHub, es necesario generar un Token de Acceso Personal para autenticarnos desde la línea de comandos en lugar de usar la contraseña habitual.</p>
+<ol>
+<li>Accedemos a la configuración de nuestra cuenta en GitHub: <strong>Settings &gt; Developer Settings &gt; Personal Access Tokens &gt; Tokens (classic)</strong>.</li>
+<li>Hacemos clic en <strong>Generate new token (classic)</strong>.</li>
+<li>Asignamos un nombre al token (por ejemplo, <code>Token_Ubuntu</code>), seleccionamos los permisos requeridos (mínimo <code>repo</code>) y guardamos el token generado de forma segura.</li>
+</ol>
+<hr />
+<h2 id="2-creacion-de-un-repositorio-en-github-prova_adri">2. Creación de un Repositorio en GitHub (<code>prova_adri</code>)</h2>
+<ol>
+<li>Desde el perfil de GitHub, creamos un nuevo repositorio público denominado <strong><code>prova_adri</code></strong>.</li>
+<li>Marcamos la opción de inicializarlo con un archivo <strong>README.md</strong>.</li>
+</ol>
+<hr />
+<h2 id="3-instalacion-y-configuracion-de-git-en-ubuntu">3. Instalación y Configuración de Git en Ubuntu</h2>
+<p>En la terminal de la máquina virtual Ubuntu, ejecutamos los siguientes comandos para instalar y configurar Git con nuestras credenciales:</p>
+<pre><code class="language-bash"># Instalación de Git
+sudo apt update
+sudo apt install git -y
+
+# Configuración del usuario y correo electrónico
+git config --global user.name &quot;Adri547&quot;
+git config --global user.email &quot;tu_correo@ejemplo.com&quot;
+
+# Verificación de la configuración
+git config --list
+</code></pre>
+<hr />
+<h2 id="4-clonar-el-repositorio-remoto">4. Clonar el Repositorio Remoto</h2>
+<p>Procedemos a clonar el repositorio <code>prova_adri</code> en nuestro entorno local:</p>
+<pre><code class="language-bash">git clone https://github.com/Adri547/prova_adri.git
+cd prova_adri
+</code></pre>
+<hr />
+<h2 id="5-trabajo-con-archivos-anadir-subir-y-modificar">5. Trabajo con Archivos: Añadir, Subir y Modificar</h2>
+<h3 id="51-crear-y-subir-un-nuevo-archivo">5.1 Crear y Subir un Nuevo Archivo</h3>
+<p>Creamos un archivo llamado <code>fichero.txt</code>, lo añadimos al área de preparación (<em>staging</em>), realizamos el <em>commit</em> y subimos los cambios al servidor remoto.</p>
+<pre><code class="language-bash">echo &quot;Hola, este es un archivo de prueba&quot; &gt; fichero.txt
+git status
+git add fichero.txt
+git commit -m &quot;Añadido el archivo fichero.txt&quot;
+git push origin main
+</code></pre>
+<h3 id="52-modificar-un-archivo-existente">5.2 Modificar un Archivo Existente</h3>
+<p>Editamos <code>fichero.txt</code> agregando nueva información y subimos la actualización a GitHub:</p>
+<pre><code class="language-bash">echo &quot;Añadiendo una nueva línea de contenido&quot; &gt;&gt; fichero.txt
+git add fichero.txt
+git commit -m &quot;Modificado contenido de fichero.txt&quot;
+git push origin main
+</code></pre>
+<hr />
+<h2 id="6-renombrar-y-borrar-archivos-en-git">6. Renombrar y Borrar Archivos en Git</h2>
+<h3 id="61-renombrar-un-archivo">6.1 Renombrar un Archivo</h3>
+<p>Cambiamos el nombre de <code>fichero.txt</code> a <code>nuevo_fichero.txt</code> utilizando el comando propio de Git:</p>
+<pre><code class="language-bash">git mv fichero.txt nuevo_fichero.txt
+git commit -m &quot;Renombrado fichero.txt a nuevo_fichero.txt&quot;
+git push origin main
+</code></pre>
+<h3 id="62-eliminar-un-archivo">6.2 Eliminar un Archivo</h3>
+<p>Eliminamos el archivo del repositorio local y remoto:</p>
+<pre><code class="language-bash">git rm nuevo_fichero.txt
+git commit -m &quot;Eliminado el archivo nuevo_fichero.txt&quot;
+git push origin main
+</code></pre>
+<hr />
+<h2 id="7-crear-un-repositorio-local-e-impulsarlo-a-github-prova2_adri">7. Crear un Repositorio Local e Impulsarlo a GitHub (<code>prova2_adri</code>)</h2>
+<p>En este paso realizamos el proceso inverso: creamos un proyecto en local y posteriormente lo vinculamos a un nuevo repositorio remoto en GitHub llamado <code>prova2_adri</code>.</p>
+<ol>
+<li><strong>Creación en GitHub:</strong> Creamos el repositorio vacío <code>prova2_adri</code> en GitHub (sin README).</li>
+<li><strong>Inicialización Local:</strong></li>
+</ol>
+<pre><code class="language-bash">mkdir prova2_adri
+cd prova2_adri
+git init
+echo &quot;# Repositorio Prova2&quot; &gt; README.md
+git add README.md
+git commit -m &quot;Initial commit&quot;
+</code></pre>
+<ol>
+<li><strong>Vinculación Remota y Subida:</strong></li>
+</ol>
+<pre><code class="language-bash">git branch -M main
+git remote add origin https://github.com/Adri547/prova2_adri.git
+git push -u origin main
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
