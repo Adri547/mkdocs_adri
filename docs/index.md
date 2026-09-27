@@ -2,15 +2,16 @@
 
 Para mas documentacion visita [github.com](https://www.github.com/Adri547).
 
-## Comandes Mkdocs
+# Documentación de Prácticas y Ejercicios
 
-* `mkdocs new [dir-name]` - Crea un nou projecte.
-* `mkdocs serve` - Inicialitza el server.
-* `mkdocs build` - Crea la documentació en site.
-* `mkdocs -h` - Mostra el menú d'ajuda.
+## Contenido
 
-## Project layout
+### Actividades
+* **Ejercicio 1:** Introducción a Git y GitHub
+* **Ejercicio 2:** Introducción a Markdown
+* **Práctica 1:** Git: Ramas y Uniones
+* **Práctica 2:** Pull Requests
+* **Práctica 3:** MkDocs y GitHub Pages
+* **Práctica 4:** Despliegue continuo (CI) con GitHub Pages
 
-    mkdocs.yml    # El ficher de configuració.
-    docs/
-        index.md  # La documentació de la página.
+---

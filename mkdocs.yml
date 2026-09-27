@@ -12,4 +12,12 @@ theme:
       scheme: slate
       primary: indigo
       accent: indigo
+nav:
+  - Inicio: index.md
+  - Actividades:
+      - "Ejercicio 1: Git y GitHub": ejercicio_1_introducci_n_a_git_y_github.md
+      - "Ejercicio 2: Markdown": ejercicio_2_introducci_n_a_markdown.md
+      - "Práctica 1: Ramas y Uniones": pr_ctica_1_git_ramas_y_uniones.md
+      - "Práctica 2: Pull Request": pr_ctica_2_pull_request.md
+      - "Práctica 3: MkDocs y GitHub Pages": pr_ctica_3_mkdocs_github_pages.md
 

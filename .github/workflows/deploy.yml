@@ -1,0 +1,29 @@
+name: Desplegar MkDocs a GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Instalar dependencias
+        run: |
+          pip install mkdocs mkdocs-material
+
+      - name: Desplegar a GitHub Pages
+        run: |
+          mkdocs gh-deploy --force
