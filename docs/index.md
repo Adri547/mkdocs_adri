@@ -13,6 +13,8 @@ Para mas documentacion visita [github.com](https://www.github.com/Adri547).
 * **Práctica 2:** Pull Requests
 * **Práctica 3:** MkDocs y GitHub Pages
 * **Práctica 4:** Despliegue continuo (CI) con GitHub Pages
-
+* **Práctica 1:** Instalación de un servidor LEMP
+* **Práctica 2:** Servir Múltiples Dominios
+* **Práctica 3:** Web Segura
 ### actualización CI
 ---
